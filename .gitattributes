@@ -1,0 +1,4 @@
+bun.lock binary
+
+/app.js binary
+/app.css binary
