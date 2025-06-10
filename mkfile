@@ -1,16 +1,19 @@
 JS=bun build
-JSFLAGS=--target browser
+JSFLAGS="--target=browser --minify --sourcemap=inline"
+JSTARG=app.js
 JSDEPS=`ls src/*.js`
 
-CSS=bun x @tailwindcss/cli
-CSSFLAGS=
+CSS=bun x --bun @tailwindcss/cli
+CSSFLAGS="--minify"
+CSSTARG=app.css
 CSSDEPS=`ls src/*.css`
 
 GLOBALDEPS= \
 	package.json \
-	bun.lock
+	bun.lock \
+	mkfile
 
-TARGS=app.js app.css
+TARGS=$JSTARG $CSSTARG
 
 all:V: $TARGS
 
