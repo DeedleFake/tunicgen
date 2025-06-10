@@ -3,7 +3,7 @@ import Alpine from 'alpinejs'
 import Word from './word.js'
 
 Alpine.store('words', {
-	words: [],
+	words: [new Word()],
 
 	add() {
 		this.words.push(new Word())

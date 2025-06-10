@@ -6,7 +6,7 @@ JSDEPS=`ls src/*.js`
 CSS=bun x --bun @tailwindcss/cli
 CSSFLAGS="--minify"
 CSSTARG=docs/app.css
-CSSDEPS=`ls src/*.css`
+CSSDEPS=`ls src/*.css` docs/index.html
 
 GLOBALDEPS= \
 	package.json \

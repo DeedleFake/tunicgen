@@ -1,4 +1,4 @@
-bun.lock binary
+/bun.lock binary
 
-/pub/app.js binary
-/pub/app.css binary
+/docs/app.js binary
+/docs/app.css binary

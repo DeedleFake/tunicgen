@@ -3,15 +3,22 @@
 
 <head>
 	<title>Tunic Gen</title>
-	<style type="text/css">
-	</style>
+	<link rel="stylesheet" href="app.css">
 	<script type="application/javascript" src="app.js" defer></script>
 </head>
 
 <body>
-	<template x-data x-for="v in $store.words.words">
-		<div x-text="v"></div>
-	</template>
+	<div x-data="$store.words" class="flex flex-col gap-4 items-start m-16">
+		<div class="flex flex-row gap-2">
+			<template x-for="(word, index) in words">
+				<div class="flex flex-col items-center" :key="index">
+					<div x-text="word"></div>
+					<button class="btn" @click="remove(index)" :disabled="words.length == 1">Remove</button>
+				</div>
+			</template>
+		</div>
+		<button class="btn" @click="add">Add Word</button>
+	</div>
 </body>
 
 </html>
